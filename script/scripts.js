@@ -35,7 +35,7 @@ $(function() {
 
 	 // RETURN OF CREATED COLUMN
 		 return $column;
-	}
+	} }
 	Column.prototype = {
     addCard: function(card) {
       this.$element.children('ul').append(card.$element);
@@ -63,25 +63,24 @@ $(function() {
 						.append($cardDescription);
 						return $card;
 			}
-			Card.prototype = {
-					removeCard: function() {
-						this.$element.remove();
-					}
-			}
 
-	}
-			var board = {
-			name: 'Kanban Board',
+			}
+		Card.prototype = {
+				removeCard: function() {
+				this.$element.remove();
+			  }
+		}
+
+
+		var board = {
+				name: 'Kanban Board',
 				addColumn: function(column) {
 					this.$element.append(column.$element);
 					initSortable();
 				},
-			$element: $('#board .column-container')
+				$element: $('#board .column-container')
 			};
-			addColumn: function(column) {
-			this.$element.append(column.$element);
-			initSortable(); //About this feature we will tell later
-			}
+
 			function initSortable() {
 			   $('.column-card-list').sortable({
 			     connectWith: '.column-card-list',
