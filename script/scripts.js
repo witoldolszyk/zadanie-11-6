@@ -35,7 +35,7 @@ $(function() {
 
 	 // RETURN OF CREATED COLUMN
 		 return $column;
-	} }
+	}
 	Column.prototype = {
     addCard: function(card) {
       this.$element.children('ul').append(card.$element);
@@ -43,10 +43,9 @@ $(function() {
     removeColumn: function() {
       this.$element.remove();
     }
-		};
+	};
 	function Card(description) {
 		var self = this;
-
     this.id = randomString();
     this.description = description;
     this.$element = createCard();
@@ -56,30 +55,33 @@ $(function() {
 			    var $card = $('<li>').addClass('card');
 			    var $cardDescription = $('<p>').addClass('card-description').text(self.description);
 			    var $cardDelete = $('<button>').addClass('btn-delete').text('x');
+
 					$cardDelete.click(function(){
 	        	self.removeCard();
 					});
 					$card.append($cardDelete)
 						.append($cardDescription);
-						return $card;
-			}
 
+					return $card;
 			}
-		Card.prototype = {
-				removeCard: function() {
-				this.$element.remove();
-			  }
 		}
 
+	Card.prototype = {
+	removeCard: function() {
+		this.$element.remove();
+		}
+	}
 
-		var board = {
-				name: 'Kanban Board',
-				addColumn: function(column) {
-					this.$element.append(column.$element);
-					initSortable();
-				},
-				$element: $('#board .column-container')
-			};
+
+
+	var board = {
+		name: 'Kanban Board',
+		addColumn: function(column) {
+			this.$element.append(column.$element);
+			initSortable();
+		},
+		$element: $('#board .column-container')
+	};
 
 			function initSortable() {
 			   $('.column-card-list').sortable({
