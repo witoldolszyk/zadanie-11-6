@@ -28,7 +28,7 @@ $(function() {
             //Add a note after clicking on the button:
             $columnAddCard.click(function() {
                 self.addCard(new Card(prompt("Enter the name of the card")));
-            })
+            });
 
             $column.append($columnTitle)
                 .append($columnDelete)
@@ -67,19 +67,20 @@ $(function() {
 						}
             return $card;
         }
-    })
+    });
     Card.prototype = {
         removeCard: function() {
             this.$element.remove();
         }
-    }
+    };
     var board = {
         name: 'Kanban Board',
         addColumn: function(column) {
             this.$element.append(column.$element);
             initSortable();
-        } }
-        $element: $('#board .column-container')
+        }
+			};
+        $element: $('#board .column-container');
 
         addColumn: function(column) {
             this.$element.append(column.$element);
