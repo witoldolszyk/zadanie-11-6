@@ -76,16 +76,17 @@ $(function() {
     var board = {
         name: 'Kanban Board',
         addColumn: function(column) {
-            this.$element.append(column.$element);
-            initSortable();
-        }
-			};
-        $element: $('#board .column-container');
+          this.$element.append(column.$element);
+          initSortable();
+        },
+        $element: $('#board .column-container')
+
 
         addColumn: function(column) {
             this.$element.append(column.$element);
             initSortable(); //About this feature we will tell later
         }
+    };
         function initSortable() {
             $('.column-card-list').sortable({
                 connectWith: '.column-card-list',
